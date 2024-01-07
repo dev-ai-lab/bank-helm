@@ -1,0 +1,33 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploymentName: bank-loans-deployment
+serviceName: bank-loans
+appLabel: bank-loans
+appName: bank-loans
+
+replicaCount: 1
+
+image:
+  repository: dockerxya/bank-loans
+  tag: latest
+
+containerPort: 8090
+
+service:
+  type: 
+  port: 8090
+  targetPort: 8090
+
+config_enabled: true
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: true
+k8s_discovery_enabled: true
+keycloak_enabled: false
+resouceserver_enabled: false
+otel_enabled: true
+kafka_enabled: false
+rabbitmq_enabled: false
+appname_enabled: true
+mysqldb_used: true

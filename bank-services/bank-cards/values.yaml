@@ -1,0 +1,33 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploymentName: bank-cards-deployment
+serviceName: bank-cards
+appLabel: bank-cards
+appName: bank-cards
+
+replicaCount: 1
+
+image:
+  repository: dockerxya/bank-cards
+  tag: latest
+
+containerPort: 9000
+
+service:
+  type: ClusterIP
+  port: 9000
+  targetPort: 9000
+
+config_enabled: true
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: true
+k8s_discovery_enabled: true
+keycloak_enabled: false
+resouceserver_enabled: false
+otel_enabled: true
+kafka_enabled: false
+rabbitmq_enabled: false
+appname_enabled: true
+mysqldb_used: true

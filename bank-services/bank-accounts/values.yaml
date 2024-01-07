@@ -1,0 +1,34 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploymentName: bank-accounts-deployment
+serviceName: bank-accounts
+appLabel: bank-accounts
+appName: bank-accounts
+
+replicaCount: 2
+
+image:
+  repository: dockerxya/bank-accounts
+  tag: latest
+
+containerPort: 8080
+
+service:
+  type: ClusterIP
+  port: 8080
+  targetPort: 8080
+
+config_enabled: true
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: true
+k8s_discovery_enabled: true
+keycloak_enabled: false
+resouceserver_enabled: false
+otel_enabled: true
+kafka_enabled: true
+rabbitmq_enabled: true
+
+appname_enabled: true
+mysqldb_used: true

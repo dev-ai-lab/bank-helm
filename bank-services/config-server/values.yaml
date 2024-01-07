@@ -1,0 +1,32 @@
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+deploymentName: config-server-deployment
+serviceName: config-server
+appLabel: config-server
+appName: config-server
+
+replicaCount: 1
+
+image:
+  repository: dockerxya/config-server
+  tag: latest
+
+containerPort: 8071
+
+service:
+  type: ClusterIP
+  port: 8071
+  targetPort: 8071
+
+config_enabled: false
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: false
+k8s_discovery_enabled: false
+keycloak_enabled: false
+resouceserver_enabled: false
+otel_enabled: true
+kafka_enabled: false
+rabbitmq_enabled: false
+appname_enabled: false
+mysqldb_used: false

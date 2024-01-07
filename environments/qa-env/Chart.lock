@@ -1,0 +1,27 @@
+dependencies:
+- name: bank-common
+  repository: file://../../bank-common
+  version: 0.1.0
+- name: zipkin
+  repository: file://../../bank-services/zipkin
+  version: 0.1.0
+- name: config-server
+  repository: file://../../bank-services/config-server
+  version: 0.1.0
+- name: bank-accounts
+  repository: file://../../bank-services/bank-accounts
+  version: 0.1.0
+- name: bank-cards
+  repository: file://../../bank-services/bank-cards
+  version: 0.1.0
+- name: bank-loans
+  repository: file://../../bank-services/bank-loans
+  version: 0.1.0
+- name: bank-messaging-service
+  repository: file://../../bank-services/bank-messaging-service
+  version: 0.1.0
+- name: gateway-server
+  repository: file://../../bank-services/gateway-server
+  version: 0.1.0
+digest: sha256:0fe2008c2151e467fd68ae1df1074a8c58054746507a177fe0bf2b7d381837f9
+generated: "2024-01-06T18:53:23.344159+01:00"

@@ -1,0 +1,26 @@
+{{- define "bank-common.configmap" -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.global.configMapName }}
+data:
+  MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: {{ .Values.global.zipkinBaseURL }}
+  SPRING_PROFILES_ACTIVE: {{ .Values.global.activeProfile }}
+  SPRING_CONFIG_IMPORT: {{ .Values.global.configServerURL }}
+  SPRING_RABBITMQ_HOST: {{ .Values.global.configRabbitMQHost }}
+  #EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: {{ .Values.global.eurekaServerURL }}
+  SPRING_CLOUD_KUBERNETES_DISCOVERY_DISCOVERY-SERVER-URL: {{ .Values.global.discoveryServerURL}}
+  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: {{ .Values.global.keyCloakURL }}
+
+  JAVA_TOOL_OPTIONS: {{ .Values.global.openTelemetryJavaAgent }}
+  OTEL_EXPORTER_OTLP_ENDPOINT: {{ .Values.global.otelExporterEndPoint }}
+  OTEL_METRICS_EXPORTER: {{ .Values.global.otelMetricsExporter }}
+  SPRING_CLOUD_STREAM_BINDERS_RABBITMQ_ENVIRONMENT_SPRING_RABBITMQ_HOST: {{ .Values.global.rabbitMqURL }}
+  SPRING_CLOUD_STREAM_BINDERS_KAFKA_ENVIRONMENT_SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: {{ .Values.global.kafkaBrokerURL }}
+
+  BA_SPRING_DATASOURCE_URL: {{ .Values.global.bankAccountsDB }}
+  BC_SPRING_DATASOURCE_URL: {{ .Values.global.bankCardsDB }}
+  BL_SPRING_DATASOURCE_URL: {{ .Values.global.bankLoansDB }}
+  SPRING_DATASOURCE_USERNAME: {{ .Values.global.dbUserName }}
+  SPRING_DATASOURCE_PASSWORD: {{ .Values.global.dbPassword }}
+{{- end -}}

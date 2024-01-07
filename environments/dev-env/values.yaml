@@ -1,0 +1,22 @@
+global:
+  configMapName: bankdev-configmap
+  zipkinBaseURL: http://zipkin:9411/api/v2/spans
+  activeProfile: default
+  configServerURL: configserver:http://config-server:8071/
+  configRabbitMQHost: rabbitmq.default.svc.cluster.local
+  #eurekaServerURL: http://eureka-server:8070/eureka/
+  discoveryServerURL: "http://spring-cloud-kubernetes-discoveryserver:80"
+  keyCloakURL: http://keycloak.default.svc.cluster.local:80/realms/master/protocol/openid-connect/certs
+
+  openTelemetryJavaAgent: "-javaagent:/app/libs/opentelemetry-javaagent-1.32.0.jar"
+  otelExporterEndPoint: http://tempo-grafana-tempo-distributor:4317
+  otelMetricsExporter: none
+  kafkaBrokerURL: kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
+  rabbitMqURL: rabbitmq.default.svc.cluster.local:5672
+
+  bankAccountsDB: jdbc:mysql://bank-accounts-mysql.default.svc.cluster.local:3306/bank-accounts-db
+  bankCardsDB: jdbc:mysql://bank-cards-mysql.default.svc.cluster.local:3306/bank-cards-db
+  bankLoansDB: jdbc:mysql://bank-loans-mysql.default.svc.cluster.local:3306/bank-loans-db
+  # We use the same username and password for all mysql dbs
+  dbUserName: root
+  dbPassword: root
