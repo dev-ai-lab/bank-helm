@@ -8,8 +8,8 @@ dependencies:
 - name: config-server
   repository: file://../../bank-services/config-server
   version: 0.1.0
-- name: bank-accounts
-  repository: file://../../bank-services/bank-accounts
+- name: bank-account
+  repository: file://../../bank-services/bank-account
   version: 0.1.0
 - name: bank-cards
   repository: file://../../bank-services/bank-cards
